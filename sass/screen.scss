@@ -1,0 +1,238 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+@import "compass/css3";
+
+/* colors */
+$home: #3498db;
+$search: #3498db;
+$links: #2980b9;
+$autoread: #3498db;
+$default_text: #606060;
+$headings: #888;
+$default_link: #3498db;
+$header_link: #fff;
+$count_color: #e67e22;
+
+/* type */
+$sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+@import url('http://www.grinnellplans.com/styles/starter_defaults.css');
+
+*, *:before, *:after {
+    -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box; 
+    box-sizing: border-box;
+ }
+
+body {
+    font-family: $sans-serif;
+    font-size: 17px;
+    line-height: 23px;
+    color: $default_text;
+}
+
+b {
+    font-weight: bold;
+}
+
+i {
+    font-style: italic;
+}
+
+a {
+    color: $default_link;
+    text-decoration: none;
+    &:hover {
+        text-decoration: none;
+        color: lighten($default_link, 20%);
+        @include transition-duration(0.5s);
+    }
+}
+
+#nav a {
+    color: $header_link;
+    font-weight: 200;
+    &:hover {
+        color: darken($header_link, 20%);
+    }
+}
+
+ul {
+    list-style: none;
+}
+
+#main, #footer {
+    width: 100%;
+    padding: 15px;
+    @media only screen and (min-width: 719px) {
+        width: 720px;
+        margin: 0 auto;
+        padding: 10px;
+    }
+}
+
+#logo, #finger, #autoread {
+    padding: 5px;
+}
+
+#links h2 {
+    padding: 5px 0;
+}
+
+#logo, #finger {
+    height: 35px;
+}
+
+#logo {
+    width: 30%;
+    float: left;
+    background-color: $home;
+    overflow: auto;
+}
+
+#finger {
+    float: left;
+    width: 70%;
+    background-color: $search;
+    overflow: auto;
+}
+
+#links {
+    width: 100%;
+    text-align: center;
+    background-color: $links;
+    overflow: auto;
+    clear: both;
+}
+
+#autoread {
+    background-color: $autoread;
+    overflow: auto;
+    width: 100%;
+    @include box-shadow(#aaa 0 1px 3px 0px);
+}
+
+li.autoreadlevel.even.first, li.autoreadlevel.odd, li.autoreadlevel.even.last {
+    display: block;
+    float: left;
+    width: 33%;
+    text-align: center;
+    background-color: $autoread;
+    overflow: auto;
+}
+
+#finger form {
+    float: right;
+}
+
+#autoread h2 {
+    display: none;
+}
+
+#links h2 {
+    cursor: pointer;
+    color: $header_link;
+}
+
+ul.linkslist li.even {
+    background-color: lighten($links, 3%);
+}
+
+ul.linkslist li {
+    padding: 5px 0;
+}
+
+.autoreadlevel > ul {
+    width: 100%;
+    margin-top: 5px;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    background: rgb(50, 50, 50); /* fallback */
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.autoreadlevel > ul li {
+    padding: 8px;
+}
+
+#autoreadadd {
+    width: 210px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.fixed-to-top {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+}
+
+.fixed-to-nav {
+    position: fixed;
+    top: 29px;
+    left: 0px;
+}
+
+#header {
+    padding: 10px 0;
+}
+
+#footer {
+    font-size: 12px;
+}
+
+#justupdated {
+    font-size: 17px;
+    padding: 15px 0;
+}
+
+.lastupdated, .lastlogin, .planname {
+    font-size: 14px;
+}
+
+#poweredby img {
+    width: 60px;
+    height: 22.5px;
+}
+
+.username {
+    text-align: center;
+    font-size: 35px;
+    padding-bottom: 15px;
+
+}
+
+.autoreadname {
+    font-size: 13px;
+}
+
+.unread-count {
+    color: $count_color;
+}
+
+.markasread {
+    font-size: 10px;
+}
+
+.title {
+    color: $headings;
+}
+
+li.username span.title {
+    display: none;
+}
+
+@media only screen and (min-width: 719px) {
+    #logo {
+        padding-left: 10%;
+    }
+    #finger {
+        padding-right: 10%;
+    }
+}
